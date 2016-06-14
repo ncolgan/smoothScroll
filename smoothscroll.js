@@ -53,8 +53,8 @@ var position = function(start, end, elapsed, duration) {
 // if context is set then scroll that element, else scroll window
 var smoothScroll = function(el, duration, callback, context){
     duration = duration || 500;
+    var start = context ? context.scrollTop : window.pageYOffset;
     context = context || window;
-    var start = window.pageYOffset;
 
     if (typeof el === 'number') {
       var end = parseInt(el);
